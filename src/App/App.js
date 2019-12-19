@@ -20,19 +20,21 @@ const App = () => {
     async function handleMap() {
         setBtn("Mapping ...")
         let result = await _map(PrivatePort, PublicPort, Gateway);
-        if (result.err) {
-            setModalMassage({ title: "Error", body: result.err });
+        if (result.error) {
+            setModalVisible(true);
+            setModalMassage({ title: "Error", body: result.error.message });
             setBtn("Map")
         } else {
-            setBtn("unMap") // need check before set
+            setBtn("unMap")
         }
     }
 
     async function handleUnMap() {
         let result = await _unMap(PublicPort);
-        if (result.err) {
-            setModalMassage({ title: "Error", body: result.err });
-            setBtn("unMap") // need check before set
+        if (result.error) {
+            setModalVisible(true);
+            setModalMassage({ title: "Error", body: result.error.message });
+            setBtn("unMap")
         } else {
             setBtn("Map")
         }
