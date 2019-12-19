@@ -7,10 +7,7 @@ module.exports = {
     },
     packagerConfig: {
         icon: __dirname + "/icon/icon.ico",
-        name: "OpenPort",
-        "win32metadata": {
-            "requested-execution-level": "requireAdministrator"
-        }
+        name: "OpenPort"
     },
     makers: [
         {
