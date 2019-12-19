@@ -42,7 +42,13 @@ const App = () => {
                     {/* <small id="emailHelp" className="form-text text-muted">Errors ... </small> */}
                 </div>
             </div>
-            
+
+            <div className="row pb-5  mx-3">
+                <div className="col-12 mt-2 text-light">
+                    <button type="button" className="btn btn-primary d-block m-auto">Map</button>
+                </div>
+            </div>
+
         </div>
     );
 }
