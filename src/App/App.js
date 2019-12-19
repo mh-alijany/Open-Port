@@ -1,7 +1,11 @@
-import React from 'react';
-import logo from '../assets/images/icon.png'
+import logo from '../assets/images/icon.png';
+import PortInput from "./Components/PortInput";
 
 const App = () => {
+
+    const [PrivatePort, setPrivatePort] = React.useState("");
+    const [PublicPort, setPublicPort] = React.useState("");
+
     return (
         <div className="container-fluid">
 
@@ -14,19 +18,13 @@ const App = () => {
                     <label>Map Ports : </label>
                 </div>
 
-                <div className="col pl-0">
-                    <input type="number" className="form-control" placeholder="Public port" />
-                    {/* <small id="emailHelp" className="form-text text-muted">Errors ... </small> */}
-                </div>
+                <PortInput placeholder="Public port" port={PublicPort} change={setPublicPort} />
 
                 <div className="col-1 text-center p-0">
                     <span>to</span>
                 </div>
 
-                <div className="col pr-0">
-                    <input type="number" className="form-control" placeholder="Private port" />
-                    {/* <small id="emailHelp" className="form-text text-muted">Errors ... </small> */}
-                </div>
+                <PortInput placeholder="Private port" port={PrivatePort} change={setPrivatePort} />
             </div>
 
             <div className="row pb-5  mx-3">
