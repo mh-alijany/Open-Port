@@ -1,6 +1,6 @@
 {
-  "name": "openport",
-  "productName": "openport",
+  "name": "open-port",
+  "productName": "open-port",
   "version": "1.0.0",
   "description": "Map public port whit private port whit UPNP",
   "main": ".webpack/main",
@@ -14,7 +14,7 @@
   "keywords": [],
   "author": {
     "name": "alijany",
-    "email": "mh.alijany@gamil.com"
+    "email": "mh.alijany@gmail.com"
   },
   "license": "MIT",
   "config": {
