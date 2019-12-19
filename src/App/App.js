@@ -17,15 +17,32 @@ const App = () => {
     const [ModalVisible, setModalVisible] = React.useState(false);
     const [ModalMassage, setModalMassage] = React.useState({ title: "", body: "" });
 
+    async function handleMap() {
+        setBtn("Mapping ...")
+        let result = await _map(PrivatePort, PublicPort, Gateway);
+        if (result.err) {
+            setModalMassage({ title: "Error", body: result.err });
+            setBtn("Map")
+        } else {
+            setBtn("unMap") // need check before set
+        }
+    }
+
+    async function handleUnMap() {
+        let result = await _unMap(PublicPort);
+        if (result.err) {
+            setModalMassage({ title: "Error", body: result.err });
+            setBtn("unMap") // need check before set
+        } else {
+            setBtn("Map")
+        }
+    }
+
     function run() {
         if (Btn == "Map") {
-            setBtn("Mapping ...")
-            _map(PrivatePort, PublicPort, Gateway);
-            setBtn("unMap") // need check before set
-
+            handleMap();
         } else if (Btn == "unMap") {
-            _unMap(PublicPort);
-            setBtn("Map")
+            handleUnMap();
         }
 
     }

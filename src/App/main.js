@@ -8,29 +8,31 @@ var client;
 //   console.log('Port mapped!')
 // })
 
-export function _map(privatePort, publicPort, gateway) { // add promise
-    if (privatePort == "") // or not valid
-        return false;
+export function _map(privatePort, publicPort, gateway) {
+    return new Promise((resolve) => {
+        if (privatePort == "") // or not valid
+            return false;
 
-    if (publicPort == "")
-        publicPort = privatePort;
+        if (publicPort == "")
+            publicPort = privatePort;
 
-    if (gateway == "")
-        gateway == null;
+        if (gateway == "")
+            gateway == null;
 
-    client = new NatAPI({ gateway: gateway });
+        client = new NatAPI({ gateway: gateway });
 
-    client.map(publicPort, privatePort, function (err) {
-        if (err) return console.log('Error', err) // add alert system
-        console.log('Port mapped!')
+        client.map(publicPort, privatePort, function (err) {
+            resolve({ error: err });
+        });
     })
 }
 
-export function _unMap(publicPort) { // add promise
-    client.unmap(publicPort, function (err) {
-        if (err) return console.log('Error', err) // add alert system
-        console.log('Port unmapped!')
-    });
+export function _unMap(publicPort) {
+    return new Promise((resolve) => {
 
-    client.destroy()
+        client.unmap(publicPort, function (err) {
+            resolve({ error: err });
+            client.destroy();
+        });
+    })
 }
