@@ -21,7 +21,7 @@ export function _map(privatePort, publicPort, gateway) {
 
         client = new NatAPI({ gateway: gateway });
 
-        client.map(+publicPort, +privatePort, function (err) {
+        client.map(publicPort, privatePort, function (err) {
             resolve({ error: err });
         });
     })
@@ -30,7 +30,7 @@ export function _map(privatePort, publicPort, gateway) {
 export function _unMap(publicPort) {
     return new Promise((resolve) => {
 
-        client.unmap(+publicPort, function (err) {
+        client.unmap(publicPort, function (err) {
             resolve({ error: err });
             client.destroy();
         });
