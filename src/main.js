@@ -17,7 +17,7 @@ const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 480,
-    icon: __dirname + "icon.ico",
+    icon: __dirname + "/icon.ico",
     height: 650
   });
 
