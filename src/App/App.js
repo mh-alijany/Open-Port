@@ -14,13 +14,13 @@ const App = () => {
     const [Btn, setBtn] = React.useState("Map");
 
     function run() {
-        if (btn == "Map") {
+        if (Btn == "Map") {
             setBtn("Mapping ...")
             _map(PrivatePort, PublicPort, Gateway);
             setBtn("unMap") // need check before set
 
-        } else if (btn == "unMap") {
-            _unMap();
+        } else if (Btn == "unMap") {
+            _unMap(PublicPort);
             setBtn("Map")
         }
 
