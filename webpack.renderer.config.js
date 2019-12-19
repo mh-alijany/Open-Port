@@ -2,7 +2,7 @@ const rules = require('./webpack.rules');
 const webpack = require('webpack');
 const babelConfig = require('./babel.config.js');
 
-const TerserPlugin = require('terser-webpack-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');
 
 rules.push({
   test: /\.css|.scss$/,
@@ -41,8 +41,8 @@ rules.push({
 })
 
 module.exports = {
-  // mode: 'production',
-  // devtool: false,
+  mode: 'production',
+  devtool: false,
   module: {
     rules,
   },
@@ -51,13 +51,13 @@ module.exports = {
       'React': 'react'
     })
   ],
-  // optimization: {
-  //   mangleWasmImports: true,
-  //   removeAvailableModules: true,
-  //   mergeDuplicateChunks: true,
-  //   usedExports: true,
-  //   minimizer: [
-  //     new TerserPlugin()
-  //   ]
-  // }
+  optimization: {
+    mangleWasmImports: true,
+    removeAvailableModules: true,
+    mergeDuplicateChunks: true,
+    usedExports: true,
+    minimizer: [
+      // new TerserPlugin() // needs babel es5
+    ]
+  }
 };
