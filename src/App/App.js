@@ -2,6 +2,7 @@ import logo from '../assets/images/icon.png';
 import PortInput from "./Components/PortInput";
 import GatewayInput from "./Components/GatewayInput";
 
+import Modal from 'react-bootstrap4-modal';
 import { _map, _unMap } from "./main"
 
 const App = () => {
@@ -12,6 +13,9 @@ const App = () => {
     const [Gateway, setGateway] = React.useState("");
 
     const [Btn, setBtn] = React.useState("Map");
+
+    const [ModalVisible, setModalVisible] = useState(false);
+    const [Modal, setModal] = useState({ title: "", body: "" });
 
     function run() {
         if (Btn == "Map") {
@@ -57,6 +61,18 @@ const App = () => {
                         onClick={run}>{Btn}</button>
                 </div>
             </div>
+
+            <Modal visible={ModalVisible} onClickBackdrop={() => setModalVisible(false)}>
+                <div className="modal-header">
+                    <h5 className="modal-title">{Modal.title}</h5>
+                </div>
+                <div className="modal-body">
+                    <p>{Modal.body}</p>
+                </div>
+                <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" onClick={() => setModalVisible(false)}>close</button>
+                </div>
+            </Modal>
 
         </div>
     );

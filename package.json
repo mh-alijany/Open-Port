@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
-    "nat-api": "^0.1.0"
+    "nat-api": "^0.1.0",
+    "react-bootstrap4-modal": "^1.7.4"
   }
 }
