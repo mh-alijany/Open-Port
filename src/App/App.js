@@ -14,8 +14,8 @@ const App = () => {
 
     const [Btn, setBtn] = React.useState("Map");
 
-    const [ModalVisible, setModalVisible] = useState(false);
-    const [Modal, setModal] = useState({ title: "", body: "" });
+    const [ModalVisible, setModalVisible] = React.useState(false);
+    const [ModalMassage, setModalMassage] = React.useState({ title: "", body: "" });
 
     function run() {
         if (Btn == "Map") {
@@ -64,13 +64,15 @@ const App = () => {
 
             <Modal visible={ModalVisible} onClickBackdrop={() => setModalVisible(false)}>
                 <div className="modal-header">
-                    <h5 className="modal-title">{Modal.title}</h5>
+                    <h5 className="modal-title">{ModalMassage.title}</h5>
                 </div>
                 <div className="modal-body">
-                    <p>{Modal.body}</p>
+                    <p>{ModalMassage.body}</p>
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" onClick={() => setModalVisible(false)}>close</button>
+                    <button type="button" className="btn btn-secondary" onClick={() => setModalVisible(false)}>
+                        close
+                     </button>
                 </div>
             </Modal>
 
