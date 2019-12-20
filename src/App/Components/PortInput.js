@@ -7,8 +7,9 @@ export class PortInput extends React.Component {
 
     handleChange(event) {
         let value = event.target.value;
-
-        if (value >= 0 && value <= 65536 && value !== "")
+        if (value == "")
+            this.change("");
+        else if (value >= 0 && value <= 65536)
             this.change(+value);
     }
 

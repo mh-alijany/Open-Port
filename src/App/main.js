@@ -10,11 +10,13 @@ var client;
 
 export function _map(privatePort, publicPort, gateway) {
     return new Promise((resolve) => {
-        if (privatePort == "") // or not valid
-            return false;
+        if (publicPort == "") {// or not valid
+            resolve({ error: { message: "public port is Required" } });
+            return;
+        }
 
-        if (publicPort == "")
-            publicPort = privatePort;
+        if (privatePort == "")
+            privatePort = publicPort;
 
         if (gateway == "")
             gateway == null;
