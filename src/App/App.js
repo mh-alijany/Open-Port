@@ -2,7 +2,7 @@ import logo from '../assets/images/icon.png';
 import PortInput from "./Components/PortInput";
 import GatewayInput from "./Components/GatewayInput";
 
-import Modal from 'react-bootstrap4-modal';
+import Alert from './Components/Alert';
 import { _map, _unMap } from "./main"
 
 const App = () => {
@@ -14,15 +14,15 @@ const App = () => {
 
     const [Btn, setBtn] = React.useState("Map");
 
-    const [ModalVisible, setModalVisible] = React.useState(false);
-    const [ModalMassage, setModalMassage] = React.useState({ title: "", body: "" });
+    const [AlertVisible, setAlertVisible] = React.useState(false);
+    const [AlertMassage, setAlertMassage] = React.useState({ title: "", body: "" });
 
     async function handleMap() {
         setBtn("Mapping ...")
         let result = await _map(PrivatePort, PublicPort, Gateway);
         if (result.error) {
-            setModalVisible(true);
-            setModalMassage({ title: "Error", body: result.error.message });
+            setAlertVisible(true);
+            setAlertMassage({ title: "Error", body: result.error.message });
             setBtn("Map")
         } else {
             setBtn("unMap")
@@ -32,8 +32,8 @@ const App = () => {
     async function handleUnMap() {
         let result = await _unMap(PublicPort);
         if (result.error) {
-            setModalVisible(true);
-            setModalMassage({ title: "Error", body: result.error.message });
+            setAlertVisible(true);
+            setAlertMassage({ title: "Error", body: result.error.message });
             setBtn("unMap")
         } else {
             setBtn("Map")
@@ -81,19 +81,10 @@ const App = () => {
                 </div>
             </div>
 
-            <Modal visible={ModalVisible} onClickBackdrop={() => setModalVisible(false)}>
-                <div className="modal-header">
-                    <h5 className="modal-title">{ModalMassage.title}</h5>
-                </div>
-                <div className="modal-body">
-                    <p>{ModalMassage.body}</p>
-                </div>
-                <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" onClick={() => setModalVisible(false)}>
-                        close
-                     </button>
-                </div>
-            </Modal>
+            <Alert
+                en={AlertVisible}
+                close={() => setAlertVisible(false)}
+                message={AlertMassage} />
 
         </div>
     );
