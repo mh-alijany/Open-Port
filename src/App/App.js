@@ -9,7 +9,6 @@ const App = () => {
 
     const [PrivatePort, setPrivatePort] = React.useState("");
     const [PublicPort, setPublicPort] = React.useState("");
-
     const [Gateway, setGateway] = React.useState("");
 
     const [Btn, setBtn] = React.useState("Map");

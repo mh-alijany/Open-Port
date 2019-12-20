@@ -41,8 +41,8 @@ rules.push({
 })
 
 module.exports = {
-  mode: 'production',
-  devtool: false,
+  // mode: 'production',
+  // devtool: false,
   module: {
     rules,
   },
@@ -51,13 +51,13 @@ module.exports = {
       'React': 'react'
     })
   ],
-  optimization: {
-    mangleWasmImports: true,
-    removeAvailableModules: true,
-    mergeDuplicateChunks: true,
-    usedExports: true,
-    minimizer: [
-      // new TerserPlugin() // needs babel es5
-    ]
-  }
+  // optimization: {
+  //   mangleWasmImports: true,
+  //   removeAvailableModules: true,
+  //   mergeDuplicateChunks: true,
+  //   usedExports: true,
+  //   minimizer: [
+  //     // new TerserPlugin() // needs babel es5
+  //   ]
+  // }
 };

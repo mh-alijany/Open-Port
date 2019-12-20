@@ -8,10 +8,28 @@ export class GatewayInput extends React.Component {
         }
     }
 
-    handleChange(event) {
-        let value = event.target.value;
+    validate(input) {
+       input = input || "";
+        let regex = /(\d{1,3})\.?/g;
+        let ip = input.match(regex) || [];
+        let _ip = "";
 
-        this.change(value);
+        if (this.props.gateway.indexOf(input) === 0) return input;
+
+        ip.forEach((part, index) => {
+            if (index > 3) return false;
+            let dot = '';
+            if (index != 3 && (part > 100 || part.endsWith(".")))
+                dot = ".";
+            _ip += Math.min(255, part) + dot;
+        });
+
+        return _ip;
+    }
+
+    handleChange(event) {
+        let value = this.validate(event.target.value);
+        if (value) this.change(value);
     }
 
     toggleChange() {
