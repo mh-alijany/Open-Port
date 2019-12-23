@@ -2,15 +2,10 @@ const NatAPI = require('nat-api');
 
 var client;
 
-// Map public port 4000 to private port 5000 with only UDP
-// client.map({ publicPort: 4000, privatePort: 5000, ttl: 1800, protocol: 'UDP' }, function (err) {
-//   if (err) return console.log('Error', err)
-//   console.log('Port mapped!')
-// })
-
 export function _map(privatePort, publicPort, gateway) {
     return new Promise((resolve) => {
-        if (publicPort == "") {// or not valid
+        
+        if (publicPort == "") { // or not valid
             resolve({ error: { message: "public port is Required" } });
             return;
         }
@@ -31,7 +26,6 @@ export function _map(privatePort, publicPort, gateway) {
 
 export function _unMap(publicPort) {
     return new Promise((resolve) => {
-
         client.unmap(publicPort, function (err) {
             resolve({ error: err });
             client.destroy();
