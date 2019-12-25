@@ -6,7 +6,7 @@
   <img width="350"  src="./screenshot/OP.png">
 </p>
 
-[en](/README.MD) 
+language : [فارسی](/README.FA.MD) / [en](/README.MD)
 
 ## فهرست
 
