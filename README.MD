@@ -28,7 +28,7 @@ Open port uses the UPNP protocol to connect which does not use any authenticatio
 You can go to [this page](https://github.com/alijany/Open-Port/releases/latest) for install.
 
 ## Build
-- Please make sure that NodeJS is installed on your system. (you can download it from [this link]((https://nodejs.org/en/))).
+- Please make sure that NodeJS is installed on your system. (you can download it from [this link](https://nodejs.org/en/)).
 - Open the project folder in the command-line then enter node I .  to install all dependencies of the project.
 - the project will start building, and a folder named out gets created at the root of the project.
 
