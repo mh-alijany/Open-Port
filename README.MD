@@ -25,10 +25,10 @@ Open port uses the UPNP protocol, which is usually is activated in modems. If no
 Open port uses the UPNP protocol to connect which does not use any authentication method and is not the total safety protocol.
 
 ## Installing
-You can go to this page for install.
+You can go to [this page](https://github.com/alijany/Open-Port/releases/latest) for install.
 
 ## Build
-- Please make sure that NodeJS is installed on your system. (you can download it from this link).
+- Please make sure that NodeJS is installed on your system. (you can download it from [this link]((https://nodejs.org/en/))).
 - Open the project folder in the command-line then enter node I .  to install all dependencies of the project.
 - the project will start building, and a folder named out gets created at the root of the project.
 
