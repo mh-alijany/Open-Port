@@ -1,47 +1,35 @@
-<div dir="rtl">
-  
-# Ope port 
+# open-port
 
 <p align="center">
   <img width="350"  src="./screenshot/OP.png">
 </p>
- 
-## فهرست
 
-- [Ope port](#ope-port)
-  - [فهرست](#%d9%81%d9%87%d8%b1%d8%b3%d8%aa)
-  - [درباره](#%d8%af%d8%b1%d8%a8%d8%a7%d8%b1%d9%87)
-  - [نصب](#%d9%86%d8%b5%d8%a8)
-  - [ساخت](#%d8%b3%d8%a7%d8%ae%d8%aa)
-  - [پیش نیاز](#%d9%be%db%8c%d8%b4-%d9%86%db%8c%d8%a7%d8%b2)
-  - [هشدار](#%d9%87%d8%b4%d8%af%d8%a7%d8%b1)
-  
+[فارسی](/README.FA.MD) 
 
-## درباره
+## Table of Contents
+- [open-port](#open-port)
+  - [Table of Contents](#table-of-contents)
+  - [About ](#about)
+  - [Prerequisites](#prerequisites)
+  - [Warning](#warning)
+  - [Installing](#installing)
+  - [Build](#build)
 
-یک برنامه ساده که به شما امکان port mappings/port forwarding در شبکه هایی که از پروتکل UPNP پشتیبانی می کند را می دهد و با کمک آن می تونید مستقیما از اینترنت به شبکه ی داخلی خودتان دسترسی داشته باشید .
+## About <a name = "about"></a>
+Open port is a simple app it can be used for port mappings / port forwarding on networks that support the UPNP protocol. And It can enable you to get access to your local network directly from the Internet with public IP.
 
-## نصب
- 
-برای نصب می توانید به [این صفحه](https://github.com/alijany/Open-Port/releases/latest) مراجعه کنید . 
+## Prerequisites
+Open port uses the UPNP protocol, which is usually is activated in modems. If not, you can activate it by referring to the modem settings.
 
-## ساخت
- 
- 1- لطفا اطمینان حاصل کنید   node js روی سیستم شما نصب است . (برای دانلود میتوانید به [این
-لینک](https://nodejs.org/en/) مراجعه کنید).
+## Warning
+Open port uses the UPNP protocol to connect which does not use any authentication method and is not the total safety protocol.
 
- 2- پوشه پروژه را در cmd یا خط فرمان باز کنید سپس از دستور  . npm i استفاده کنید تا وابستگی های
-پروژه نصب شود.
+## Installing
+You can go to this page for install.
 
- 3- سپس با دستور  npm run make پروژه شروع به ساخته شدن می کند و پوشه ای به نام  out در
-پروژه ایجاد می شود .  
-
-  
-## پیش نیاز
-
- این برنامه از پروتکل UPNP استفاده می کند که معمولا در مودم ها فعال است. در صورت فعال نبودن می توانید با مراجعه به تنظیمات مودم آن را فعال کنید 😄 .
+## Build
+- Please make sure that NodeJS is installed on your system. (you can download it from this link).
+- Open the project folder in the command-line then enter node I .  to install all dependencies of the project.
+- the project will start building, and a folder named out gets created at the root of the project.
 
 
-## هشدار
-
- این برنامه از پروتکل UPNP برای اتصال استفاده بهره می برد  که از هیچ متد رمز نگاری و احراز هویتی استفاده نمی کند ودر مجموع پروتکل ایمنی محسوب نمی شود .  
