@@ -16,7 +16,7 @@ language : [فارسی](/README.FA.MD) / [en](/README.MD)
   - [Build](#build)
 
 ## About <a name = "about"></a>
-Open port is a simple app it can be used for port mappings / port forwarding on networks that support the UPNP protocol. And It useful to get access to your local network directly from the Internet by public IP.
+Open port is a simple app it can be used for port mappings / port forwarding on networks that support the UPNP protocol. And It's useful for whiles you need to get access to your local network directly from the Internet by public IP.
 
 ## Prerequisites
 Open port uses the UPNP protocol, which is usually is activated in modems. If it's not, you can activate it by referring to the modem settings.
